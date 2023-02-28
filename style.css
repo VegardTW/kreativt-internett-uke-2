@@ -1,3 +1,55 @@
 html {
+}
+
+* {
     border: red 1px solid;
+}
+
+.container {
+    display: grid;
+    /*margin-top: 100vh;*/
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+        "aside main";
+
+}
+
+header {
+    width: 100vw;
+    position: fixed;
+    height: 95svh;
+}
+
+nav {
+    position: sticky;
+    width: 100vw;
+    height: 5svh;
+    margin-top: 95vh;
+}
+
+aside {
+    grid-area: aside;
+}
+
+main {
+    grid-area: main;
+
+}
+
+article {
+    margin-top: 2rem;
+    padding: 6rem;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.placeholder-space {
+    height: 2000px;
+}
+.placeholder{
+    background: rgba(255, 0, 0, 0.1);
+    height: 150px;
+    width: 30%;
 }
