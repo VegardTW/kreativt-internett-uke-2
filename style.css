@@ -1,39 +1,58 @@
 html {
+    font-family: "Helvetica Neue", sans-serif;
+    --aside-width: 15vw;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 * {
-    border: red 1px solid;
+    /*border: red 1px solid;*/
 }
 
-.container {
-    display: grid;
-    /*margin-top: 100vh;*/
-    grid-template-columns: 1fr 6fr;
-    grid-template-rows: repeat(5, auto);
-    grid-template-areas:
-        "aside main";
-
-}
-
+/************* Header/nav, start ***************/
 header {
-    width: 100vw;
-    position: fixed;
+    width: 100%;
+    position: relative;
     height: 95svh;
+    background: white;
+    z-index: 10;
 }
 
 nav {
-    position: sticky;
-    width: 100vw;
+    position: relative;
+    width: 100%;
     height: 5svh;
-    margin-top: 95vh;
+    /*margin-top: 95vh;*/
+    background: darkred;
+    z-index: 11;
 }
 
 aside {
-    grid-area: aside;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: var(--aside-width);
+    z-index: 1;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.timeline {
+    height: 80%;
+    border-left: 5px black solid;
+}
+
+/************** Article stuff, start ************/
 main {
     grid-area: main;
+    padding-left: var(--aside-width);
 
 }
 
@@ -48,8 +67,19 @@ article {
 .placeholder-space {
     height: 2000px;
 }
-.placeholder{
+
+.placeholder {
     background: rgba(255, 0, 0, 0.1);
     height: 150px;
     width: 30%;
+}
+
+/*********** Footer, start, ***********/
+footer {
+    position: relative;
+    bottom: 0;
+    height: 50vh;
+    width: 100%;
+    z-index: 10;
+    background: bisque;
 }
