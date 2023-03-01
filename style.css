@@ -59,11 +59,29 @@ main {
 article {
     margin-top: 2rem;
     padding: 6rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 1rem;
     flex-wrap: wrap;
 
 }
+#article-1{
+    grid-template-areas: "head head head head head head head"
+"img img img img img p p";
 
+}
+article h1{
+    grid-area: head;
+    margin: 0 0 0.5rem 0;
+}
+#article-1 img{
+grid-area: img;
+    width: 100%;
+}
+#article-1 p{
+grid-area: p;
+}
 .placeholder-space {
     height: 2000px;
 }
