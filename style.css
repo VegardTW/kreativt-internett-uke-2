@@ -41,12 +41,29 @@ aside {
     background: white;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
+
 }
 
 .timeline {
     height: 80%;
+    /*position: block;*/
+    /*top: 200px;*/
+    /*left: 100px;*/
     border-left: 5px black solid;
+    align-self: center;
+    /*margin: 50% 0 50% 50%*/
+
+}
+
+#scroll-marker {
+    position: absolute;
+    border: red 1px solid;
+    padding-top: 100px;
+    top: 0;
+    align-self: center;
+    height: 20px;
+    width: 50px;
 }
 
 /************** Article stuff, start ************/
