@@ -142,12 +142,13 @@ aside {
 
 #scroll-marker svg {
     overflow: visible;
-    width: 0;
-    height: 0;
+    width: 1px;
+    height: 1px;
 }
 
 #scroll-marker circle {
     fill: red;
+
     transform: translateY(-0.2rem);
 }
 
