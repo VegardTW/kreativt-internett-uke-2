@@ -1,5 +1,5 @@
 html {
-    font-family: "Helvetica Neue", sans-serif;
+    font-family: "ibm-plex-sans", "Helvetica Neue", "Arial", sans-serif;
     --aside-width: 16vw;
     scroll-behavior: smooth;
 
@@ -8,6 +8,7 @@ html {
 p {
     line-height: 1.45;
     hyphens: auto;
+    font-weight: 500;
 }
 
 a {
@@ -104,7 +105,7 @@ aside {
     background: white;
     display: flex;
     justify-content: center;
-    font-family: "Roboto Mono", monospace;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
     font-size: 0.9rem;
 }
 
