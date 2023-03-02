@@ -3,10 +3,12 @@ html {
     --aside-width: 15vw;
 
 }
+
 a {
     color: black;
     text-decoration: none;
 }
+
 h3 {
     margin: 0;
     padding: 0;
@@ -174,8 +176,20 @@ article {
     grid-template-rows: repeat(3, auto);
     gap: 1rem;
     flex-wrap: wrap;
-
+    grid-template-areas: "head head head head head head head" 
+    "img img img img img p p";
 }
+
+article h1 {
+    grid-area: head;
+    margin: 0 0 0.5rem 0;
+}
+
+article p {
+    font-size: 1.3rem;
+}
+
+/***** article 1 *****/
 
 #article-1 {
     grid-template-areas: "head head head head head head head"
@@ -183,10 +197,6 @@ article {
 
 }
 
-article h1 {
-    grid-area: head;
-    margin: 0 0 0.5rem 0;
-}
 
 #article-1 img {
     grid-area: img;
@@ -197,14 +207,61 @@ article h1 {
     grid-area: p;
 }
 
-.placeholder-space {
-    height: 2000px;
+/******** article 2 ********/
+
+#article-2 img {
+    grid-area: img;
+    width: 70%;
 }
 
-.placeholder {
-    background: rgba(255, 0, 0, 0.1);
-    height: 150px;
-    width: 30%;
+#article-3 {
+    grid-template-areas: "head head head head head head head"
+"img img img img img img img"
+"p p p p p p p";
+}
+
+#article-3 img {
+    grid-area: img;
+    width: 75%;
+}
+
+#article-4 img {
+    grid-area: img;
+    width: 50%;
+}
+
+#article-6 img {
+    grid-area: img;
+    width: 75%;
+}
+
+#article-7 img {
+    grid-area: img;
+    width: 75%;
+}
+
+#article-9 img {
+    grid-area: img;
+    width: 90%;
+}
+
+#article-10 img {
+    grid-area: img;
+    width: 80%;
+}
+
+#article-11 img {
+    grid-area: img;
+    width: 80%;
+}
+
+#article-12 .image1 {
+    grid-area: img;
+    width: 50%;
+}
+
+#article-12 .image2 {
+
 }
 
 /*********** Footer, start, ***********/
