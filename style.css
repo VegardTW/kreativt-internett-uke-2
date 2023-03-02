@@ -3,6 +3,14 @@ html {
     --aside-width: 15vw;
 
 }
+a {
+    color: black;
+    text-decoration: none;
+}
+h3 {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     margin: 0;
@@ -16,10 +24,50 @@ body {
 /************* Header/nav, start ***************/
 header {
     width: 100%;
+    display: grid;
+    grid-template-rows: auto auto;
+    align-items: center;
     position: relative;
-    height: 95svh;
-    background: rgba(255, 255, 255, 0.51);
+    height: 100svh;
+    background: rgb(203, 203, 203);
     z-index: 10;
+}
+
+header > h1 {
+    margin: 0;
+    padding: 0 10rem 0 10rem;
+    font-size: 10vw;
+    max-width: 100%;
+    color: white;
+    justify-self: center;
+}
+
+.down-arrow {
+    display: grid;
+    justify-self: center;
+    height: 6rem;
+    width: 7rem;
+    align-items: flex-end;
+    justify-content: center;
+
+}
+
+.down-arrow > svg {
+    justify-self: center;
+    overflow: visible;
+    /*background: blue;*/
+    height: 1.5rem;
+    width: 5rem;
+}
+
+.down-arrow > svg > rect:nth-child(1) {
+    transform-origin: center center;
+    transform: rotate(45deg) translateX(-1.75rem);
+}
+
+.down-arrow > svg > rect:nth-child(2) {
+    transform-origin: center center;
+    transform: rotate(-45deg) translateX(1.75rem);
 }
 
 nav {
@@ -27,7 +75,7 @@ nav {
     width: 100%;
     height: 5svh;
     /*margin-top: 95vh;*/
-    background: rgba(139, 0, 0, 0.53);
+    background: rgba(139, 0, 0, 100);
     z-index: 11;
 }
 
@@ -50,7 +98,7 @@ aside {
     /*position: block;*/
     /*top: 200px;*/
     /*left: 100px;*/
-    border-left: 5px black solid;
+    border: 2px black solid;
     align-self: center;
     /*margin: 50% 0 50% 50%*/
 
@@ -60,36 +108,66 @@ aside {
     display: flex;
     position: absolute;
     height: 80vh;
-    background: beige;
+    overflow: visible;
+    /*background: white;*/
     width: 100px;
     align-self: center;
+    justify-content: center;
 }
 
 #scroll-marker {
     position: absolute;
-    background: gold;
     top: 0;
     align-self: center;
-    height: 20px;
-    width: 50px;
+    overflow: visible;
+    /*height: 1rem;*/
+    /*width: 1rem;*/
 }
-.marker{
+
+#scroll-marker svg {
+    overflow: visible;
+    width: 0;
+    height: 0;
+}
+
+#scroll-marker circle {
+    fill: red;
+    transform: translateY(-0.2rem);
+}
+
+.marker {
     position: absolute;
-    width: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "year markline name";
+    width: 150px;
     top: 0;
     align-self: center;
-    border: red 5px solid;
+    align-items: center;
+    /*border: black 1.5px solid;*/
+}
+
+.year {
+    grid-area: year;
+}
+
+.marker-line {
+    grid-area: markline;
+    width: content-box;
+    top: 0;
+    border: black 1.5px solid;
 }
 
 /************** Article stuff, start ************/
 main {
     grid-area: main;
     padding-left: var(--aside-width);
+    margin-right: 10vw;
 
 }
 
 article {
-    margin-top: 40rem;
+    margin-top: 0;
     padding: 6rem;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
