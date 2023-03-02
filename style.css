@@ -70,15 +70,6 @@ header > h1 {
     transform: rotate(-45deg) translateX(1.75rem);
 }
 
-nav {
-    position: relative;
-    width: 100%;
-    height: 5svh;
-    /*margin-top: 95vh;*/
-    background: rgba(139, 0, 0, 100);
-    z-index: 11;
-}
-
 aside {
     position: fixed;
     left: 0;
@@ -89,7 +80,7 @@ aside {
     background: white;
     display: flex;
     justify-content: center;
-    /*align-items: center;*/
+    font-family: "Roboto Mono", monospace;
 
 }
 
@@ -138,9 +129,9 @@ aside {
 .marker {
     position: absolute;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 8rem 1fr 8rem;
     grid-template-areas: "year markline name";
-    width: 150px;
+    width: auto;
     top: 0;
     align-self: center;
     align-items: center;
@@ -149,12 +140,14 @@ aside {
 
 .year {
     grid-area: year;
+justify-self:right;
 }
 
 .marker-line {
     grid-area: markline;
-    width: content-box;
     top: 0;
+    width: 1vw;
+    margin: 0 1rem 0 1rem;
     border: black 1.5px solid;
 }
 
@@ -163,12 +156,13 @@ main {
     grid-area: main;
     padding-left: var(--aside-width);
     margin-right: 10vw;
+    /*background: linear-gradient(180deg, rgb(236, 249, 255) 0%, rgb(139, 219, 255) 100%);*/
 
 }
 
 article {
     margin-top: 0;
-    padding: 6rem;
+    padding: 25vh 6rem 6rem 6rem;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(3, auto);
@@ -216,3 +210,6 @@ footer {
     z-index: 10;
     background: rgba(255, 228, 196, 0.5);
 }
+
+/**********@ test *************/
+#article-12 img:nth-child(1)
