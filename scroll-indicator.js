@@ -7,6 +7,14 @@ window.onload = function () {
     articleMarker("article-2", "mark-2")
     articleMarker("article-3", "mark-3")
     articleMarker("article-4", "mark-4")
+    articleMarker("article-5", "mark-5")
+    articleMarker("article-6", "mark-6")
+    articleMarker("article-7", "mark-7")
+    articleMarker("article-8", "mark-8")
+    articleMarker("article-9", "mark-9")
+    articleMarker("article-10", "mark-10")
+    articleMarker("article-11", "mark-11")
+    articleMarker("article-12", "mark-12")
 }
 
 function timelineDistance(position) {
