@@ -11,7 +11,7 @@ window.onload = function () {
 
 function timelineDistance(position) {
     let positionOffset = position + document.documentElement.clientHeight;
-    const topOffset = document.querySelector("nav").offsetTop + document.documentElement.clientHeight;
+    const topOffset = document.querySelector("main").offsetTop + document.documentElement.clientHeight;
     const docHeight = document.documentElement.offsetHeight;
     const timelineHeight = docHeight - topOffset
 
