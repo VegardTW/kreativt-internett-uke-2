@@ -1,12 +1,24 @@
 html {
     font-family: "Helvetica Neue", sans-serif;
-    --aside-width: 15vw;
+    --aside-width: 16vw;
+    scroll-behavior: smooth;
 
+}
+
+p {
+    line-height: 1.45;
+    hyphens: auto;
 }
 
 a {
     color: black;
     text-decoration: none;
+    transition: 0.2s;
+}
+a:hover {
+    transform-origin: center center;
+ transform: scale(115%);
+    font-size: 115%;
 }
 
 h3 {
@@ -17,6 +29,10 @@ h3 {
 body {
     margin: 0;
     padding: 0;
+}
+
+.scroll-snap{
+    scroll-snap-type: y mandatory;
 }
 
 * {
@@ -31,17 +47,19 @@ header {
     align-items: center;
     position: relative;
     height: 100svh;
-    background: rgb(203, 203, 203);
+    background: rgb(23, 97, 190);
     z-index: 10;
 }
 
 header > h1 {
     margin: 0;
     padding: 0 10rem 0 10rem;
-    font-size: 10vw;
+    font-size: 19vh;
+    line-height: 1;
     max-width: 100%;
     color: white;
     justify-self: center;
+
 }
 
 .down-arrow {
@@ -60,16 +78,20 @@ header > h1 {
     /*background: blue;*/
     height: 1.5rem;
     width: 5rem;
+    filter: drop-shadow(3px 10px 5px rgba(0, 0, 0, 0.3));
+
 }
 
 .down-arrow > svg > rect:nth-child(1) {
     transform-origin: center center;
     transform: rotate(45deg) translateX(-1.75rem);
+    fill: white;
 }
 
 .down-arrow > svg > rect:nth-child(2) {
     transform-origin: center center;
     transform: rotate(-45deg) translateX(1.75rem);
+    fill: white;
 }
 
 aside {
@@ -83,7 +105,7 @@ aside {
     display: flex;
     justify-content: center;
     font-family: "Roboto Mono", monospace;
-
+    font-size: 1.3rem;
 }
 
 .timeline {
@@ -91,7 +113,7 @@ aside {
     /*position: block;*/
     /*top: 200px;*/
     /*left: 100px;*/
-    border: 2px black solid;
+    border: 2px rgb(23, 97, 190) solid;
     align-self: center;
     /*margin: 50% 0 50% 50%*/
 
@@ -131,7 +153,7 @@ aside {
 .marker {
     position: absolute;
     display: grid;
-    grid-template-columns: 8rem 1fr 8rem;
+    grid-template-columns: 15rem 1fr 15rem;
     grid-template-areas: "year markline name";
     width: auto;
     top: 0;
@@ -142,7 +164,7 @@ aside {
 
 .year {
     grid-area: year;
-justify-self:right;
+    justify-self: right;
 }
 
 .marker-line {
@@ -157,30 +179,34 @@ justify-self:right;
 main {
     grid-area: main;
     padding-left: var(--aside-width);
-    margin-right: 10vw;
-    /*background: linear-gradient(180deg, rgb(236, 249, 255) 0%, rgb(139, 219, 255) 100%);*/
-
+    margin: 0 14vw 0 4vw;
+    background: white;
+    /*filter: drop-shadow(0.5vw 0.2vw 1vw black);*/
 }
 
 article {
-    margin-top: 0;
-    padding: 25vh 6rem 6rem 6rem;
+    margin-bottom: 20vh;
+    padding: 4vw 2vw 4vw 2vw;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(3, auto);
-    gap: 1rem;
+    gap: 2vw;
     flex-wrap: wrap;
     grid-template-areas: "head head head head head head head" 
     "img img img img img p p";
 }
 
-article h1 {
+article h2 {
     grid-area: head;
-    margin: 0 0 0.5rem 0;
+    font-size: 8rem;
+    margin: 0 0 3vw 0;
 }
 
 article p {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
+    margin: 0;
+    column-gap: 2vw;
+
 }
 
 /***** article 1 *****/
@@ -202,71 +228,253 @@ article p {
 }
 
 /******** article 2 ********/
+#article-2 {
+    background: rgba(240, 240, 240, 1);
+    grid-template-areas: "img img img img img p p"
+"img img img img img p p";
+}
 
 #article-2 img {
     grid-area: img;
-    width: 70%;
+    width: 100%;
 }
 
+#article-2 h2 {
+    display: none;
+}
+
+#article-2 p {
+    column-count: 1;
+    grid-area: p;
+    width: 90%;
+}
+
+/********* article 3 ********/
+
 #article-3 {
-    grid-template-areas: "head head head head head head head"
-"img img img img img img img"
-"p p p p p p p";
+    grid-template-areas: "p p img img img img img"
+"p p img img img img img"
+    /*"p p p p p p p";*/;
 }
 
 #article-3 img {
     grid-area: img;
-    width: 75%;
+    width: 100%;
+    background: #d6ebff;
+}
+
+#article-3 h2 {
+    display: none;
+    margin: 0;
+}
+
+#article-3 p {
+    grid-area: p;
+}
+
+/********* article 4 ********/
+#article-4 {
+    grid-template-areas: "p p p  img img img";
+    background: rgba(240, 240, 240, 1);
+
 }
 
 #article-4 img {
     grid-area: img;
-    width: 50%;
+    width: 100%;
+}
+
+#article-4 h2 {
+    display: none;
+    margin: 0;
+}
+
+#article-4 p {
+    grid-area: p;
+    width: 45%;
+    align-self: center;
+    justify-self: center;
+}
+
+/********* article 5 ********/
+#article-5 {
+    grid-template-rows: 1fr;
+    grid-template-columns: auto auto;
+    grid-template-areas: "img"
+"p";
+}
+
+#article-5 img {
+    width: 100%;
+    grid-area: img;
+    height: 100%;
+}
+
+#article-5 h2 {
+    display: none;
+}
+
+#article-5 p {
+    grid-area: p;
+    column-count: 2;
+    width: 62%;
+
+}
+
+/********* article 6 ********/
+#article-6 {
+    background: rgba(240, 240, 240, 1);
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "img p";
+
 }
 
 #article-6 img {
     grid-area: img;
-    width: 75%;
+    width: 90%;
+}
+
+#article-6 h2 {
+    display: none;
+
+}
+
+#article-6 p {
+    width: 90%;
+}
+
+/********* article 7 ********/
+#article-7 {
+    grid-template: auto/1fr 2fr;
+    grid-template-areas: "p img";
 }
 
 #article-7 img {
     grid-area: img;
-    width: 75%;
+    width: 100%;
+}
+
+#article-7 h2 {
+    display: none;
+
+}
+
+#article-7 p {
+    grid-area: p;
+    width: 90%;
+}
+
+/********* article 8 ********/
+#article-8 {
+    background: rgba(240, 240, 240, 1);
+    grid-template: auto/2.5fr 1fr;
+    grid-template-areas: "img p";
+}
+
+#article-8 img {
+    grid-area: img;
+    width: 100%;
+}
+
+#article-8 h2 {
+    display: none;
+}
+
+#article-8 p {
+    grid-area: p;
+    width: 90%;
+    padding-left: 1vw;
+    padding-top: 100px;
+}
+
+/********* article 9 ********/
+#article-9 {
+    grid-template: auto auto/1fr 3.4fr;
+    grid-template-areas: "head head" "p img";
 }
 
 #article-9 img {
     grid-area: img;
-    width: 90%;
+    width: 100%;
+    background: #fffaee;
+}
+
+/********* article 10 ********/
+#article-10 {
+    background: rgba(240, 240, 240, 1);
+    grid-template: auto auto/5fr 2fr;
+    grid-template-areas: "head head" "img p"
 }
 
 #article-10 img {
     grid-area: img;
-    width: 80%;
+    width: 100%;
+}
+
+#article-10 p {
+    width: 90%;
+    margin-left: 1vw;
+}
+
+/********* article 11 ********/
+#article-11 {
+    grid-template: auto auto/2fr 5fr;
+    grid-template-areas: "head head""p img";
+
 }
 
 #article-11 img {
     grid-area: img;
-    width: 80%;
+    width: 100%;
+}
+
+#article-11 p {
+    width: 90%;
+    margin-left: 1vw;
+}
+
+/********* article 12 ********/
+#article-12 {
+    grid-template: auto auto auto/1.4fr 1fr;
+    grid-template-areas: "head head" "img1 img2" "img1 p";
+    background: rgba(240, 240, 240, 1);
 }
 
 #article-12 .image1 {
-    grid-area: img;
-    width: 50%;
+    grid-area: img1;
+    width: 100%;
 }
 
 #article-12 .image2 {
+    grid-area: img2;
+    width: 100%;
+
+}
+
+#article-12 p {
+    column-count: 2;
 
 }
 
 /*********** Footer, start, ***********/
 footer {
     position: relative;
+    display: grid;
     bottom: 0;
     height: 50vh;
     width: 100%;
     z-index: 10;
-    background: rgba(255, 228, 196, 0.5);
+    background: rgb(23, 97, 190);
+    font-size: 3rem;
+    justify-content: center;
+    align-content: center;
 }
-
-/**********@ test *************/
-#article-12 img:nth-child(1)
+footer h1{
+    color: white;
+}
+footer a {
+    position: relative;
+    justify-self: center;
+    color: white;
+}
